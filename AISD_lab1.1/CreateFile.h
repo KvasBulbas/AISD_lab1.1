@@ -10,10 +10,12 @@ bool createFileWithRandomNumbers(const std::string& fileName, const int numbersC
 	std::ofstream file(fileName);
 	if (!file.is_open())
 		return false;
-	std::mt19937_64 generator(0);
+	//std::mt19937_64 generator(0);
+	std::random_device rd;
 	std::uniform_int_distribution<int> distribution(-maxNumberValue, maxNumberValue);
 	for (int i = 0; i < numbersCount; i++)
-		file << distribution(generator) << " ";
+		//file << distribution(generator) << " ";
+		file << distribution(rd) << " ";
 	file.close();
 	return true;
 }

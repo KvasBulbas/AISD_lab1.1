@@ -109,6 +109,6 @@ bool straightSort(std::string fileName, const int numbersCount, const int maxNum
 
 	if (isFileContainsSortedArray(fileName))
 		return 1;
-	else return 0;
+	else return -2;
 
 }

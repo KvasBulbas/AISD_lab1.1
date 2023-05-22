@@ -125,7 +125,8 @@ int naturalSort(std::string originFile, const int numberscount, const int maxnum
 {
 	std::string fileB = "Z:\\fileSorts\\fileB.txt";
 	std::string fileC = "Z:\\fileSorts\\fileC.txt";
-	if (!(createFileWithRandomNumbers(originFile, numberscount, maxnumbervalue))) return -1;
+	if (!(createFileWithRandomNumbers(originFile, numberscount, maxnumbervalue))) 
+		return -1;
 	while (true)
 	{
 		
@@ -139,6 +140,8 @@ int naturalSort(std::string originFile, const int numberscount, const int maxnum
 		merge(originFile, fileB, fileC);
 		
 	}
-	if (isFileContainsSortedArray(originFile)) return 1;
-	else return 0;
+	if (isFileContainsSortedArray(originFile)) 
+		return 1;
+	else 
+		return -2;
 }
