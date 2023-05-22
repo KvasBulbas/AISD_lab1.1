@@ -91,3 +91,24 @@ void merge(std::string fileName, std::string fileB, std::string fileC, int p)
 	A.close(); B.close(); C.close();
 
 }
+
+
+bool straightSort(std::string fileName, const int numbersCount, const int maxNumberValue)
+{
+	std::string fileB = "Z:\\fileSorts\\fileB.txt";
+	std::string fileC = "Z:\\fileSorts\\fileC.txt";
+	int p = 1;
+	if (!(createFileWithRandomNumbers(fileName, numbersCount, maxNumberValue))) return -1;
+	split(fileName, fileB, fileC, p);
+	while (!isempty(fileC))
+	{
+		merge(fileName, fileB, fileC, p);
+		p *= 2;
+		split(fileName, fileB, fileC, p);
+	}
+
+	if (isFileContainsSortedArray(fileName))
+		return 1;
+	else return 0;
+
+}

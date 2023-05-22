@@ -1,4 +1,3 @@
-
 #include<iostream>
 #include<fstream>
 #include<ctime>
@@ -8,16 +7,15 @@
 
 int main()
 {
-	const int numbersCount = 10;
-	const int maxNumberValue = 10;
+	const int numbersCount = 15;
+	const int maxNumberValue = 30;
 	std::string fileName = "Z:\\fileSorts\\straightSort2.txt";
 	std::string fileB = "Z:\\fileSorts\\fileB.txt";
 	std::string fileC = "Z:\\fileSorts\\fileC.txt";
-	createFileWithRandomNumbers(fileName, numbersCount, maxNumberValue);
+
 
 	//std::cout<< isempty(fileName) << " " << isFileContainsSortedArray(fileName);
-	int p = 1;
-	split(fileName, fileB, fileC, p);
+	straightSort(fileName, numbersCount, maxNumberValue);
 
 
 	return 0;
