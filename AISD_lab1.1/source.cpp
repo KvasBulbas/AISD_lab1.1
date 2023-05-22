@@ -2,21 +2,32 @@
 #include<fstream>
 #include<ctime>
 #include<random>
-#include "CreateFile.h"
-#include "StraightSoirt.h"
+#include"CreateFile.h"
+#include"StraightSort.h"
+#include"NaturalSort.h"
 
 int main()
 {
-	const int numbersCount = 15;
-	const int maxNumberValue = 30;
-	std::string fileName = "Z:\\fileSorts\\straightSort2.txt";
-	std::string fileB = "Z:\\fileSorts\\fileB.txt";
-	std::string fileC = "Z:\\fileSorts\\fileC.txt";
+	const int numbersCount = 110;
+	const int maxNumberValue = 200;
+	std::string fileName1 = "Z:\\fileSorts\\NaturaltSort.txt";
+	std::string fileName2 = "Z:\\fileSorts\\StraightSort.txt";
 
+	for (int i = 0; i < 10; i++) {
+		switch (straightSort(fileName1, numbersCount, maxNumberValue)) {
+		case 1:
+			std::cout << "Test passed." << std::endl;
+			break;
 
-	//std::cout<< isempty(fileName) << " " << isFileContainsSortedArray(fileName);
-	straightSort(fileName, numbersCount, maxNumberValue);
+		case -1:
+			std::cout << "Test failed: can't create file." << std::endl;
+			break;
 
+		case -2:
+			std::cout << "Test failed: file isn't sorted." << std::endl;
+			break;
+		}
+	}
 
 	return 0;
 }
