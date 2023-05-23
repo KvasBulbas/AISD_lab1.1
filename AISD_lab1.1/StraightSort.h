@@ -1,8 +1,6 @@
 #pragma once
 #include<iostream>
 #include<fstream>
-#include<ctime>
-#include<random>
 #include "createFile.h"
 
 void split(std::string fileName, std::string fileB, std::string fileC, int p)
@@ -11,6 +9,7 @@ void split(std::string fileName, std::string fileB, std::string fileC, int p)
 	std::ifstream A(fileName);
 	std::ofstream B(fileB);
 	std::ofstream C(fileC);
+
 	A >> x;
 	while (!A.eof())
 	{
@@ -26,6 +25,7 @@ void split(std::string fileName, std::string fileB, std::string fileC, int p)
 			A >> x;
 		}
 	}
+
 	A.close(); B.close(); C.close();
 }
 
@@ -37,11 +37,10 @@ void merge(std::string fileName, std::string fileB, std::string fileC, int p)
 	std::ofstream A(fileName);
 	std::ifstream B(fileB);
 	std::ifstream C(fileC);
-	B >> x; C >> y;
 
+	B >> x; C >> y;
 	while (!(B.eof()) && !(C.eof()))
 	{
-
 		int i = 0, j = 0;
 
 		while (!(B.eof()) && !(C.eof()) && i < p && j < p)
@@ -89,7 +88,6 @@ void merge(std::string fileName, std::string fileB, std::string fileC, int p)
 	}
 
 	A.close(); B.close(); C.close();
-
 }
 
 
@@ -98,7 +96,10 @@ bool straightSort(std::string fileName, const int numbersCount, const int maxNum
 	std::string fileB = "Z:\\fileSorts\\fileB.txt";
 	std::string fileC = "Z:\\fileSorts\\fileC.txt";
 	int p = 1;
-	if (!(createFileWithRandomNumbers(fileName, numbersCount, maxNumberValue))) return -1;
+
+	if (!(createFileWithRandomNumbers(fileName, numbersCount, maxNumberValue))) 
+		return -1;
+
 	split(fileName, fileB, fileC, p);
 	while (!isempty(fileC))
 	{
