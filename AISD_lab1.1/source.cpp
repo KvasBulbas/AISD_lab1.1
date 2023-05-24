@@ -1,8 +1,4 @@
 #include<iostream>
-#include<fstream>
-#include<ctime>
-#include<random>
-#include"CreateFile.h"
 #include"StraightSort.h"
 #include"NaturalSort.h"
 
@@ -10,6 +6,7 @@ int main()
 {
 	const int numbersCount = 100;
 	const int maxNumberValue = 100;
+
 	std::string fileName1 = "Z:\\fileSorts\\NaturalSort.txt";
 	std::string fileName2 = "Z:\\fileSorts\\StraightSort.txt";
 
